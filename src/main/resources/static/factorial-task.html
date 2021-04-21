@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" lang="en">
+<head><title>Лабораторная работа №1</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5 mb-5"><h2>Задание №1:</h2> <h5 class="text-justify"> Клиент посылает два числа серверу m и n,
+    сервер возвращает m!+n! этих чисел назад клиенту.</h5>
+    <form class="mt-5" action="factorial-task.html" method="post">
+
+        <div class="row"><input type="number" name="firstNumber" placeholder="Введите n(<20)"
+                                class="form-control col mr-2 ml-3"><br> <input type="number" name="secondNumber"
+                                                                               placeholder="Введите m(<20)"
+                                                                               class="form-control col ml-2 mr-3"><br>
+        </div>
+        <button type="submit" class="btn btn-success btn-block btn-lg mt-3">Посчитать!</button>
+    </form>
+    <br>
+    <h3 th:text="${factorialTaskResult}"></h3></div>
+<div th:insert="blocks/footer" :: footer></div>
+</body>
+</html>
